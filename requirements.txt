@@ -1,0 +1,15 @@
+flask
+scikit-learn
+pandas
+numpy
+matplotlib
+jupyter
+openpyxl
+
+evidently
+black
+isort
+pre-commit
+pytest
+prefect
+mlflow
