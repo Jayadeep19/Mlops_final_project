@@ -18,6 +18,7 @@ pre-commit = "*"
 pytest = "*"
 prefect = "*"
 mlflow = "*"
+pylint = "*"
 
 [dev-packages]
 

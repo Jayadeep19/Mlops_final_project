@@ -1,0 +1,11 @@
+[tool.pylint.main]
+disable = [
+    "missing-module-docstring",
+]
+
+
+[tool.isort]
+line_length = 99
+
+[tool.black]
+line-length = 99

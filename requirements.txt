@@ -13,3 +13,4 @@ pre-commit
 pytest
 prefect
 mlflow
+pylint
