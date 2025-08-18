@@ -21,6 +21,7 @@ mlflow = "*"
 pylint = "*"
 
 [dev-packages]
+seaborn = "*"
 
 [requires]
 python_version = "3.11"
