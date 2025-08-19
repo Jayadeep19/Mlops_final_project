@@ -13,12 +13,12 @@ from prefect import task, flow
 import variables as var
 from register_model import register_model
 
-#@task(name = "reading pickle files")
+@task(name = "reading pickle files")
 def read_pkl(file_path):
     with open(file_path, "rb") as f_in:
         return pickle.load(f_in)
 
-#@task(name = "prep data")
+@task(name = "prep data")
 def prep_data(df:pd.DataFrame, dv:DictVectorizer, fit_dv:bool = False):
     # dicts = df[var.categorical_features + var.numerical_features].to_dict(orient='records')
     dicts = df[var.features].to_dict(orient='records')
@@ -28,7 +28,7 @@ def prep_data(df:pd.DataFrame, dv:DictVectorizer, fit_dv:bool = False):
         df = dv.transform(dicts)
     return df, dv
 
-#@task(name = "preparing data for training")
+@task(name = "preparing data for training")
 def run_data_prep():
     X_train, y_train = read_pkl(var.TRAIN_DATA_PATH)
     X_val, y_val = read_pkl(var.VAL_DATA_PATH)
@@ -42,7 +42,7 @@ def run_data_prep():
 
     return X_train, y_train, X_val, y_val, X_test, y_test, dv
 
-#@task(name = "training model")
+@task(name = "training model for ore quality prediction")
 def train_model(
         dv:DictVectorizer,
         X_train:pd.DataFrame,
@@ -75,7 +75,7 @@ def train_model(
     return None
 
 
-#@flow(name = "training model")
+@flow(name = "training model")
 def main():
     mlflow_client = MlflowClient(tracking_uri = var.MLFLOW_TRACKING_URI)
     mlflow.set_tracking_uri(var.MLFLOW_TRACKING_URI)
@@ -91,4 +91,6 @@ def main():
     return mlflow_client, X_test, y_test
 
 if __name__ == '__main__':
-    main()
+    _, x_test, y_test = main()
+    #print('x_test',type(x_test), x_test[3])
+    #print('y_test',type(y_test), y_test[3])
