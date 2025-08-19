@@ -32,3 +32,10 @@ web_service:
 	pipenv run docker run -it --rm -p 9696:9696 ore-quality-prediction:v1
 	@echo 'open a new terminal and run'
 	@echo 'python test.py'
+
+monitoring:
+	@echo 'Starting monitoring with evidently and grafana dashboards'
+	docker-compose -f ./monitoring/docker-compose.yaml up --build
+	@echo "Open a new terminal and run"
+	@echo "cd monitoring"
+	@echo "python generate_evidently_metrics.py"

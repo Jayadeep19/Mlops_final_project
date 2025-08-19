@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c07d823f5d01facee871585003e369044b7370fd6e5dac1f6feb9d60279507bd"
+            "sha256": "78a66e9fce943c093e7f9efb01e3918b0646bb32cda0c95e8e333fb6e08949fe"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -907,6 +907,15 @@
             ],
             "markers": "python_version >= '3.7'",
             "version": "==2.40.3"
+        },
+        "grafana": {
+            "hashes": [
+                "sha256:45cf2b43c4f8194369de4c077084b982b1be06bbae25f5a6ad1d1bcf3af8b919",
+                "sha256:a6ad951495bb03f628c849eda3aeb9bfd29870c9fbe179f4cb2dfaea3218ac8a"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.6'",
+            "version": "==0.0.1"
         },
         "graphene": {
             "hashes": [
@@ -2567,6 +2576,15 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==7.0.0"
+        },
+        "psycopg": {
+            "hashes": [
+                "sha256:01a8dadccdaac2123c916208c96e06631641c0566b22005493f09663c7a8d3b6",
+                "sha256:2fbb46fcd17bc81f993f28c47f1ebea38d66ae97cc2dbc3cad73b37cefbff700"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==3.2.9"
         },
         "ptyprocess": {
             "hashes": [
