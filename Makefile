@@ -23,3 +23,12 @@ make_deployment:
 	pipenv run prefect deploy --name ore_quality_prediction_deployment
 	pipenv run prefect worker start --pool 'ore_quality_prediction_pool'
 	@echo 'Now run the deployment from gui'
+
+web_service:
+	@echo "Creating docker container for model deployment (as web service)"
+	@echo "open new terminal and run"
+	@echo "cd web_service"
+	pipenv run docker build -f Dockerfile -t ore-quality-prediction:v1 .
+	pipenv run docker run -it --rm -p 9696:9696 ore-quality-prediction:v1
+	@echo 'open a new terminal and run'
+	@echo 'python test.py'

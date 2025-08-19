@@ -2,10 +2,10 @@ from flask import Flask, jsonify, request
 import pickle
 import pandas
 
-with open('web_service/dict_vect.bin', 'rb') as f_in:
+with open('dict_vect.bin', 'rb') as f_in:
     dv = pickle.load(f_in)
 
-with open("web_service/model.pkl", 'rb') as m_in:
+with open("model.pkl", 'rb') as m_in:
     model = pickle.load(m_in)
 
 def prep_features(data):
@@ -19,7 +19,7 @@ def predict(features):
     pred = model.predict(X)
     return pred[0]
 
-app = Flask('output-prediction')
+app = Flask('ore-quality-prediction')
 
 @app.route('/predict', methods=['POST'])
 def predict_end_ppoint():

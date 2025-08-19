@@ -12,7 +12,7 @@ RUN pipenv install --system --deploy
 
 COPY [ "predict.py", "./" ]
 
-COPY [ 'dict_vect.bin', 'model.pkl',"./" ]
+COPY [ "dict_vect.bin", "model.pkl", "./" ]
 
 EXPOSE 9696
 
