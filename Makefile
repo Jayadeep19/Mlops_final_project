@@ -18,7 +18,7 @@ prefect:
 
 make_deployment:
 	@echo 'Deploying workflow using pool with prefect and yaml file'
-	pipenv run prefect work-pool delete ore_quality_prediction_pool
+	#pipenv run prefect work-pool delete ore_quality_prediction_pool
 	pipenv run prefect work-pool create --type process ore_quality_prediction_pool
 	pipenv run prefect deploy --name ore_quality_prediction_deployment
 	pipenv run prefect worker start --pool 'ore_quality_prediction_pool'

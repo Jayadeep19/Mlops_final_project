@@ -22,6 +22,7 @@ pylint = "*"
 
 [dev-packages]
 seaborn = "*"
+requests = "*"
 
 [requires]
 python_version = "3.11"
