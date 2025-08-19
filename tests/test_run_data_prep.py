@@ -1,4 +1,5 @@
-from src import prep_data, variables
+from src import prep_data
+from src import variables
 
 def test_run_prep_data():
     """

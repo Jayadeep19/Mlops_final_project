@@ -72,6 +72,7 @@ def run_prep_data(raw_data_path, dest_path):
     write_txt(X_val, 'val_dataset')
     write_txt(X_test, 'test_dataset')
     print("Data split and save as pickle files")
+    return True
 
 def prep_data(data):
     '''Takes the dataset and applies required filters and downsamples the dataset set as necessary

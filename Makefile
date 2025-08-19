@@ -25,9 +25,9 @@ make_deployment:
 	@echo 'Now run the deployment from gui'
 
 web_service:
-	@echo "Creating docker container for model deployment (as web service)"
-	@echo "open new terminal and run"
-	@echo "cd web_service"
+	@echo 'Creating docker container for model deployment (as web service)'
+	@echo 'open new terminal and run'
+	@echo 'cd web_service'
 	pipenv run docker build -f Dockerfile -t ore-quality-prediction:v1 .
 	pipenv run docker run -it --rm -p 9696:9696 ore-quality-prediction:v1
 	@echo 'open a new terminal and run'
@@ -36,6 +36,15 @@ web_service:
 monitoring:
 	@echo 'Starting monitoring with evidently and grafana dashboards'
 	docker-compose -f ./monitoring/docker-compose.yaml up --build
-	@echo "Open a new terminal and run"
-	@echo "cd monitoring"
-	@echo "python generate_evidently_metrics.py"
+	@echo 'Open a new terminal and run'
+	@echo 'cd monitoring'
+	@echo 'python generate_evidently_metrics.py'
+
+reset:
+	@echo 'Cleaning the project directory'
+	rm -rf __pycache__
+	rm -rf data
+	rm -rf mlruns
+	rm -rf artifacts_local
+	rm -rf backend.db
+	pipenv --rm

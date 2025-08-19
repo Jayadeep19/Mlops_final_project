@@ -8,6 +8,7 @@ RAW_DATA_PATH = DATA_PATH.joinpath('raw', 'MiningProcess_Flotation_Plant_Databas
 TRAIN_DATA_PATH = DATA_PATH.joinpath('processed_data','train.pkl')
 TEST_DATA_PATH = DATA_PATH.joinpath('processed_data','test.pkl')
 VAL_DATA_PATH = DATA_PATH.joinpath('processed_data','val.pkl')
+TESTING_DATA = PROJECT_DIR.joinpath('tests', 'test_data')
 
 #features and targets obtained from EDA
 air_flow = ['Flotation Column 01 Air Flow', 'Flotation Column 02 Air Flow', 'Flotation Column 03 Air Flow', 'Flotation Column 04 Air Flow', 'Flotation Column 05 Air Flow', 'Flotation Column 06 Air Flow', 'Flotation Column 07 Air Flow']
